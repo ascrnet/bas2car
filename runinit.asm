@@ -13,6 +13,7 @@ ICAX3Z  = $2C
 ICAX4Z  = $2D
 ICAX5Z  = $2E
 ICAX6Z  = $2F
+SDMCTL	= $022F
 KBCODES = $02FC
 MEMLO   = $02E7
 CDST    = $A000
@@ -130,7 +131,8 @@ ENDPAG7
 		ORG $BE00
 ;-----------------------------------------------------------------------
 ; BEGIN
-BEGIN	jsr CPYP7
+BEGIN	mva #0 SDMCTL
+		jsr CPYP7
 		jsr NEWHAND
 		jsr CRSDWN
 		jsr CRSDWN
